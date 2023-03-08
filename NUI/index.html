@@ -1,0 +1,167 @@
+<!doctype HTML>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- <script src="nui://game/ui/jquery.js" type="text/javascript"></script> -->
+    <script src="https://kit.fontawesome.com/a6c44b414d.js" crossorigin="anonymous"></script>
+    <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="style/style.css">
+
+    <title>GMD_HUD-SYSTEM</title>
+</head>
+
+<body>
+    <style>
+        /* HERE STYLES */
+    </style>
+    <!-- CHATSYSTEM -->
+    <div class="container">
+        <div class="chat-container">
+            <div class="chat-input">
+                <i class="fa-regular fa-comments"></i>
+                <input type="text" placeholder="Type here...">
+            </div>
+            <div class="box">
+                <p>/ooc</p>
+                <p>/jobmsg</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- NOTIFYSYSTEM -->
+    <div class="notify">
+
+        <div class="flag note">
+            <div class="flag__image note__icon">
+                <i class="fa fa-heart"></i>
+            </div>
+            <div class="flag__body note__text">
+                You so Hungry
+            </div>
+            <a href="#" class="note__close">
+                <i class="fa fa-times"></i>
+            </a>
+        </div>
+
+        <div class="flag note note--secondary">
+            <div class="flag__image note__icon">
+                <i class="fa fa-comment"></i>
+            </div>
+            <div class="flag__body note__text">
+                Massages
+            </div>
+            <a href="#" class="note__close">
+                <i class="fa fa-times"></i>
+            </a>
+        </div>
+
+        <div class="flag note note--success">
+            <div class="flag__image note__icon">
+                <i class="fa fa-check"></i>
+            </div>
+            <div class="flag__body note__text">
+                Your thing was successful!
+            </div>
+            <a href="#" class="note__close">
+                <i class="fa fa-times"></i>
+            </a>
+        </div>
+
+        <div class="flag note note--warning">
+            <div class="flag__image note__icon">
+                <i class="fa fa-exclamation"></i>
+            </div>
+            <div class="flag__body note__text">
+                Your thing was not so successful!
+            </div>
+            <a href="#" class="note__close">
+                <i class="fa fa-times"></i>
+            </a>
+        </div>
+
+        <div class="flag note note--error">
+            <div class="flag__image note__icon">
+                <i class="fa fa-times"></i>
+            </div>
+            <div class="flag__body note__text">
+                Your thing failed completely!
+            </div>
+            <a href="#" class="note__close">
+                <i class="fa fa-times"></i>
+            </a>
+        </div>
+
+        <div class="flag note note--info">
+            <div class="flag__image note__icon">
+                <i class="fa fa-info"></i>
+            </div>
+            <div class="flag__body note__text">
+                <p>Restart on 10pmghfdgfghds sdfhksd sdj sdfsdkfj sdav ölkm dgfölm df,g lök</p>
+            </div>
+            <a href="#" class="note__close">
+                <i class="fa fa-times"></i>
+            </a>
+        </div>
+    </div>
+    <!-- SPEEDOMETER -->
+    <div id="speedometer">
+        <div style="display: none;"><img id="sprite" src="data/icons.svg"></div>
+        <canvas id="canvas" width="425" height="210"></canvas>
+    </div>
+
+    </div>
+    <div class="servermsg">
+        <!-- HERE SERVER MSG -->
+    </div>
+    <div class="jobnotify">
+        <!-- HERE JOB NOTIFY -->
+    </div>
+    <div class="playernotify">
+        <!-- HERE PLAYER NOTIFY -->
+    </div>
+    <div class="eventnotify">
+        <!-- HERE EVENT NOTIFY -->
+    </div>
+    <div class="nwnotify">
+        <!-- HERE EVENT NOTIFY -->
+    </div>
+
+    </div>
+    <script>
+        $(".note__close").click(function() {
+            $(this).parent()
+                .animate({
+                    opacity: 0
+                }, 250, function() {
+                    $(this)
+                        .animate({
+                            marginBottom: 0
+                        }, 250)
+                        .children()
+                        .animate({
+                            padding: 0
+                        }, 250)
+                        .wrapInner("<div />")
+                        .children()
+                        .slideUp(250, function() {
+                            $(this).closest(".note").remove();
+                        });
+                });
+        });
+        let motorSamplePath = 'https://freesound.org/data/previews/127/127980_2335231-lq.ogg';
+
+        // METER
+    </script>
+    <script src="scripts/fraction.min.js"></script>
+    <script src="scripts/speedometer.js"></script>
+    <script src="scripts/script.js" type="text/javascript"></script>
+</body>
+
+</html>
